@@ -1,141 +1,184 @@
 /*---------------------------- Start Hero Style ---------------------------------*/
 .hero {
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://musarafhossain.github.io/COHS/assests/images/construction-field.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://musarafhossain.github.io/COHS/assests/images/construction-field.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
 }
 
 .sub-hero {
-    max-width: 1444px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    gap: 2rem;
-    color: #ffffff;
-    padding: clamp(1rem, 5vw, 3rem);
-    margin-top: 7rem;
-    flex-direction: column;
+  max-width: 1444px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #ffffff;
+  padding: clamp(1rem, 5vw, 3rem);
+  margin-top: 7rem;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
-    .sub-hero {
-        margin-top: 5rem;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        max-width: 1444px;
-        gap: 4rem;
-    }
+  .sub-hero {
+    margin-top: 5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1444px;
+    gap: 4rem;
+  }
 }
 
 /* Start Left Section */
 .hero .hero-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    margin-top: auto;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: auto;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-    .hero .hero-left {
-        width: 50%;
-    }
+  .hero .hero-left {
+    width: 50%;
+  }
 }
 
 .hero .hero-left .p1 {
-    font-family: "Edu NSW ACT Hand Pre", cursive;
-    font-size: 0.75rem;
-    display: flex;
-    gap: .5rem;
-    align-items: center;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-size: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  animation: slideInLeft 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
 .hero .hero-left .p1 i {
-    font-size: 1rem;
-    color: #f9ad4a;
+  font-size: 1rem;
+  color: #f9ad4a;
 }
 
 .hero .hero-left .h1 {
-    font-family: 'Roboto';
-    font-size: clamp(3rem, 5vw, 4rem);
-    line-height: normal;
+  font-family: "Roboto";
+  font-size: clamp(3rem, 5vw, 4rem);
+  line-height: normal;
+  animation: slideInLeft 0.6s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
 }
 
 .hero .hero-left .p2 {
-    font-family: "Montserrat";
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-family: "Montserrat";
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  animation: slideInLeft 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
 }
 
 .hero .hero-left button {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: 300;
-    cursor: pointer;
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    margin-top: 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin-top: 2rem;
+  animation: zoomIn 0.5s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
 }
 
 .hero .hero-left button:hover {
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .hero .hero-left button i {
-    font-weight: 300;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease-in-out;
+  font-weight: 300;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .hero .hero-left button:hover i {
-    transform: translateX(3px);
-    color: #000;
+  transform: translateX(3px);
+  color: #000;
 }
 /* End Left Section */
 
 /* Start Right Section */
 .hero .hero-right {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 .hero .hero-right img {
-    transform: translateY(5rem);
-    width: 100%;
-    animation: float 3s ease-in-out infinite;
-    border-radius: 0.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  opacity: 0;
+  animation: zoomFloat 1s ease-out forwards, floatLoop 3s ease-in-out 4s infinite;
 }
 
 @media (min-width: 1024px) {
-    .hero .hero-right img {
-        transform: translateY(7rem);
-        width: 500px;
-        animation: float 3s ease-in-out infinite;
-    }
+  .hero .hero-right img {
+    width: 500px;
+  }
+}
+/* End Right Section */
+
+/* Keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* Floating keyframes */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(7rem);
-    }
-    50% {
-        transform: translateY(5rem);
-    }
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* End Right Section*/
+@keyframes zoomFloat {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(7rem);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(7rem);
+  }
+}
+
+@keyframes floatLoop {
+  0%,
+  100% {
+    transform: scale(1) translateY(7rem);
+  }
+  50% {
+    transform: scale(1) translateY(5rem);
+  }
+}
 /*---------------------------- End Hero Style ---------------------------------*/
