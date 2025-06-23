@@ -103,6 +103,7 @@
 
 .hero .hero-left button:hover i {
     transform: translateX(3px);
+    color: #000;
 }
 /* End Left Section */
 
