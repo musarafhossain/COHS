@@ -13,3 +13,44 @@ html, body {
   color: #333;
   line-height: 1.6;
 }
+
+header {
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.3); /* transparent black */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 0 5vw;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f9ad4a; /* highlight color on hover */
+}
