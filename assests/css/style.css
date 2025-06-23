@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
@@ -14,9 +15,10 @@ html, body {
   line-height: 1.6;
 }
 
+/*---------------------------- Start Header Style ---------------------------------*/
 header {
   height: 100px;
-  background-color: rgba(0, 0, 0, 0.3); /* transparent black */
+  background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   position: fixed;
   top: 0;
@@ -27,30 +29,82 @@ header {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.header-container {
+header .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-.logo img {
-  height: 60px;
-  width: auto;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
+header .header-container .left .logo {
   color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  font-size: 1.5rem;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
 }
 
-.nav-links a:hover {
-  color: #f9ad4a; /* highlight color on hover */
+header .header-container .left .logo i {
+  font-size: 2rem;
+  color: crimson;
 }
+
+@media (min-width: 768px) {
+  header .header-container .left .logo {
+    font-size: 2rem;
+  }
+
+  header .header-container .left .logo i {
+    font-size: 3rem;
+  }
+}
+
+header .header-container .right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 6rem;
+  font-family: 'Roboto';
+  font-weight: 100;
+}
+
+header .header-container .right .icon i {
+  font-size: 2rem;
+}
+
+header .header-container .right .contact-info {
+  color: #fff;
+  display: none;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 800px) {
+  header .header-container .right .contact-info {
+    display: none;
+  }
+}
+
+header .header-container .right .contact-info .contact-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+header .header-container .right .contact-info .contact-data .heading {
+  font-size: 1rem;
+}
+
+header .header-container .right .contact-info .contact-data i {
+  font-size: 2rem;
+}
+
+header .header-container .right .contact-info .contact-data .child {
+  font-size: 0.7rem;
+}
+
+i {
+  color: #fff;
+}
+
+/*---------------------------- End Header Style ---------------------------------*/
