@@ -15,6 +15,11 @@ body {
   line-height: 1.6;
 }
 
+:root{
+  --mobile-nav-height: 400px;
+  --desktop-nav-height: 600px;
+}
+
 /*---------------------------- Start Header Style ---------------------------------*/
 header {
   height: 80px;
@@ -22,48 +27,59 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 10;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   padding: 0 5vw;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: height 0.4s ease;
+  overflow: hidden;
+
+  animation: slideDown 1s ease-out forwards;
+  opacity: 0;
 }
 
-@media (min-width: 768px) {
-  header {
-    height: 100px;
-  }
+header.expand {
+  height: var(--mobile-nav-height);
+  background-color: rgba(0, 0, 0, 1);
 }
 
-header .header-container {
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  min-height: 80px;
 }
 
-header .header-container .left .logo {
+/* Logo */
+.logo {
   color: #fff;
   font-size: 1.5rem;
   font-family: "Edu NSW ACT Hand Pre", cursive;
+  opacity: 0;
+  animation: zoomIn 0.6s ease-out 1s forwards;
 }
 
-header .header-container .left .logo i {
+.logo i {
   font-size: 2rem;
   color: crimson;
 }
 
 @media (min-width: 768px) {
-  header .header-container .left .logo {
+  .logo {
     font-size: 2rem;
   }
 
-  header .header-container .left .logo i {
+  .logo i {
     font-size: 3rem;
   }
 }
 
-header .header-container .right {
+/* Right Section */
+.right {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -72,11 +88,18 @@ header .header-container .right {
   font-weight: 100;
 }
 
-header .header-container .right .icon i {
-  font-size: 2rem;
+.icon {
+  animation: zoomIn 0.6s ease-out 1s forwards;
+  opacity: 0;
+  cursor: pointer;
 }
 
-header .header-container .right .contact-info {
+.icon i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.contact-info {
   color: #fff;
   display: none;
   gap: 3rem;
@@ -85,27 +108,206 @@ header .header-container .right .contact-info {
 }
 
 @media (min-width: 800px) {
-  header .header-container .right .contact-info {
+  .contact-info {
     display: flex;
   }
 }
 
-header .header-container .right .contact-info .contact-data {
+.contact-data {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.5rem;
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-header .header-container .right .contact-info .contact-data .heading {
+.contact-data:nth-child(1) {
+  animation-delay: 1.6s;
+}
+
+.contact-data:nth-child(2) {
+  animation-delay: 1.9s;
+}
+
+.contact-data:nth-child(3) {
+  animation-delay: 2.2s;
+}
+
+.contact-data .heading {
   font-size: 1rem;
 }
 
-header .header-container .right .contact-info .contact-data i {
+.contact-data i {
   font-size: 2rem;
 }
 
-header .header-container .right .contact-info .contact-data .child {
+.contact-data .child {
   font-size: 0.7rem;
 }
-/*---------------------------- End Header Style ---------------------------------*/
+
+/*---------------------------- Navigation Menu ---------------------------------*/
+.nav-links {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+header.expand .nav-links {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.nav-links a {
+  position: relative;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: none;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: crimson;
+  /* underline color */
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+/* On hover: underline expands + color change */
+.nav-links a:hover {
+  color: crimson;
+  /* text color on hover */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+
+header.expand .nav-links a {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+header.expand .nav-links a:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+header.expand .nav-links a:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+header.expand .nav-links a:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+header.expand .nav-links a:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/*---------------------------- Animations --------------------------------------*/
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.nav-links .mobile-contact {
+  display: none;
+}
+
+/* Hide desktop contact info below 800px */
+@media (max-width: 800px) {
+  header.expand {
+    height: var(--desktop-nav-height);
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  .nav-links .mobile-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .nav-links .mobile-contact .contact-data {
+    flex-direction: row;
+    gap: 0.5rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInRight 0.4s ease forwards;
+  }
+
+  .nav-links .mobile-contact .contact-data:nth-child(1) {
+    animation-delay: 1s;
+  }
+
+  .nav-links .mobile-contact .contact-data:nth-child(2) {
+    animation-delay: 1.2s;
+  }
+
+  .nav-links .mobile-contact .contact-data:nth-child(3) {
+    animation-delay: 1.4s;
+  }
+}
