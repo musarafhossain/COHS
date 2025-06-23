@@ -115,13 +115,27 @@
 .hero .hero-right img {
     transform: translateY(5rem);
     width: 100%;
+    animation: float 3s ease-in-out infinite;
+    border-radius: 0.5rem;
 }
 
 @media (min-width: 1024px) {
     .hero .hero-right img {
         transform: translateY(7rem);
         width: 500px;
+        animation: float 3s ease-in-out infinite;
     }
 }
+
+/* Floating keyframes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(7rem);
+    }
+    50% {
+        transform: translateY(5rem);
+    }
+}
+
 /* End Right Section*/
 /*---------------------------- End Hero Style ---------------------------------*/
